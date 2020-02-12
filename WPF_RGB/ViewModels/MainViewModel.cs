@@ -36,6 +36,7 @@ namespace WPF_RGB.ViewModels
                 NotifyPropertyChanged();
                 NotifyPropertyChanged("MergedDecimal");
                 NotifyPropertyChanged("HexaDecimal");
+                NotifyPropertyChanged("Luma");
             }
         }
 
@@ -52,6 +53,7 @@ namespace WPF_RGB.ViewModels
                 NotifyPropertyChanged();
                 NotifyPropertyChanged("MergedDecimal");
                 NotifyPropertyChanged("HexaDecimal");
+                NotifyPropertyChanged("Luma");
             }
         }
 
@@ -68,6 +70,7 @@ namespace WPF_RGB.ViewModels
                 NotifyPropertyChanged();
                 NotifyPropertyChanged("MergedDecimal");
                 NotifyPropertyChanged("HexaDecimal");
+                NotifyPropertyChanged("Luma");
             }
         }
 
@@ -100,6 +103,15 @@ namespace WPF_RGB.ViewModels
                 string g = Green.ToString("X");
                 string b = Blue.ToString("X");
                 return "#" + r.PadLeft(2, '0') + g.PadLeft(2, '0') + b.PadLeft(2, '0');
+            }
+        }
+
+        public string Luma
+        {
+            get
+            {
+                double lum = 0.3 * Red + 0.59 * Green + 0.11 * Blue;
+                return lum.ToString();
             }
         }
 
